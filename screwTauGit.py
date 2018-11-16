@@ -13,6 +13,14 @@ def inMessage(str1, str2):
 
 
 class GuardsmanClient(Client):
+	phrasebook = None
+
+
+	def initializeMatrix(self, filename):
+		self.phrasebook = {}
+		phraseFile = open(filename)
+
+
 	def onMessage(self, mid, author_id, message_object, thread_id, thread_type, ts, metadata, msg, **kwargs):
 		print("Received message, processing")
 		print("AUTHOR ID: " + author_id)
